@@ -79,17 +79,17 @@ namespace StarsAbove.NPCs.NeonVeil
                     if (p.active && p.Distance(NPC.Center) < 500 && !p.dead)
                     {
                         if (Main.netMode != NetmodeID.MultiplayerClient)
-                        {
-                            for (int i3 = 0; i3 < 50; i3++)
-                            {
-                                SoundEngine.PlaySound(SoundID.DD2_DarkMageAttack, NPC.Center);
+						{
+							for (int i3 = 0; i3 < 50; i3++)
+							{
 
-                                Vector2 position = Vector2.Lerp(new Vector2(p.Center.X, p.Center.Y - 700), NPC.Center, (float)i3 / 50);
-                                Dust d = Dust.NewDustPerfect(position, DustID.LifeDrain, null, 240, default, 2f);
-                                d.fadeIn = 0.3f;
-                                d.noLight = true;
-                                d.noGravity = true;
-                            }
+								Vector2 position = Vector2.Lerp(new Vector2(p.Center.X, p.Center.Y - 700), NPC.Center, (float)i3 / 50);
+								Dust d = Dust.NewDustPerfect(position, DustID.LifeDrain, null, 240, default, 2f);
+								d.fadeIn = 0.3f;
+								d.noLight = true;
+								d.noGravity = true;
+							}
+                            SoundEngine.PlaySound(SoundID.DD2_DarkMageAttack, NPC.Center);
                             Projectile.NewProjectile(NPC.GetSource_FromAI(), p.Center.X, p.Center.Y - 700, 0, 3, ModContent.ProjectileType<SemaphoreBolt>(), NPC.damage, 0f, Main.myPlayer);
                         }
                     }

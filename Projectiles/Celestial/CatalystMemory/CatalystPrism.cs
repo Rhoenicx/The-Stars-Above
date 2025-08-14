@@ -32,6 +32,9 @@ namespace StarsAbove.Projectiles.Celestial.CatalystMemory
             Projectile.extraUpdates = 1;            //Set to above 0 if you want the projectile to update multiple time in a frame
             Projectile.DamageType = ModContent.GetInstance<Systems.CelestialDamageClass>();
             AIType = ProjectileID.Bullet;           //Act exactly like default Bullet
+
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = -1;
         }
         public override bool PreDraw(ref Color lightColor)
         {

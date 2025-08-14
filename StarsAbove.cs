@@ -429,7 +429,7 @@ namespace StarsAbove
 					"LogBoss",
 					this,
 					nameof(ArbitrationBoss),
-					17.9f,
+					15.9f,
 					() => DownedBossSystem.downedArbiter,
 					ModContent.NPCType<ArbitrationBoss>(),
 					new Dictionary<string, object>()

@@ -12118,6 +12118,7 @@ Mods: {
 					[c/D294FF:Weapon Memory]
 					When Imprinted into a weapon, gain the following effects:
 					If aspected to Magic damage, gain 12% increased damage
+					Does not apply if the weapon was originally Magic
 					'''
 				TooltipAttached: If aspected to Magic damage, gain 12% increased damage
 			}
@@ -12129,6 +12130,7 @@ Mods: {
 					[c/D294FF:Weapon Memory]
 					When Imprinted into a weapon, gain the following effects:
 					If aspected to Melee damage, gain 12% increased damage
+					Does not apply if the weapon was originally Melee
 					'''
 				TooltipAttached: If aspected to Melee damage, gain 12% increased damage
 			}
@@ -12150,6 +12152,7 @@ Mods: {
 					[c/D294FF:Weapon Memory]
 					When Imprinted into a weapon, gain the following effects:
 					If aspected to Ranged damage, gain 12% increased damage
+					Does not apply if the weapon was originally Ranged
 					'''
 				TooltipAttached: If aspected to Ranged damage, gain 12% increased damage
 			}
@@ -12161,6 +12164,7 @@ Mods: {
 					[c/D294FF:Weapon Memory]
 					When Imprinted into a weapon, gain the following effects:
 					If aspected to Summon damage, gain 12% increased damage
+					Does not apply if the weapon was originally Summon
 					'''
 				TooltipAttached: If aspected to Summon damage, gain 12% increased damage
 			}

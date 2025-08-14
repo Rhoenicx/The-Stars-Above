@@ -471,19 +471,19 @@ namespace StarsAbove.Systems.Items
             {
                 damage += (0.18f + damageModAdditive * damageModMultiplicative) * memoryGlobalMod;
             }
-            if(MeleeSigil && player.GetModPlayer<StarsAbovePlayer>().MeleeAspect == 2)
+            if(MeleeSigil && player.GetModPlayer<StarsAbovePlayer>().MeleeAspect == 2 && item.GetGlobalItem<StarsAboveGlobalItem>().getOldDamageClass() != DamageClass.Melee)
             {
                 damage += (0.12f + damageModAdditive * damageModMultiplicative) * memoryGlobalMod;
             }
-            if (MagicSigil && player.GetModPlayer<StarsAbovePlayer>().MagicAspect == 2)
+            if (MagicSigil && player.GetModPlayer<StarsAbovePlayer>().MagicAspect == 2 && item.GetGlobalItem<StarsAboveGlobalItem>().getOldDamageClass() != DamageClass.Magic)
             {
                 damage += (0.12f + damageModAdditive * damageModMultiplicative) * memoryGlobalMod;
             }
-            if (RangedSigil && player.GetModPlayer<StarsAbovePlayer>().RangedAspect == 2)
+            if (RangedSigil && player.GetModPlayer<StarsAbovePlayer>().RangedAspect == 2 && item.GetGlobalItem<StarsAboveGlobalItem>().getOldDamageClass() != DamageClass.Ranged)
             {
                 damage += (0.12f + damageModAdditive * damageModMultiplicative) * memoryGlobalMod;
             }
-            if (SummonSigil && player.GetModPlayer<StarsAbovePlayer>().SummonAspect == 2)
+            if (SummonSigil && player.GetModPlayer<StarsAbovePlayer>().SummonAspect == 2 && item.GetGlobalItem<StarsAboveGlobalItem>().getOldDamageClass() != DamageClass.Summon)
             {
                 damage += (0.12f + damageModAdditive * damageModMultiplicative) * memoryGlobalMod;
             }

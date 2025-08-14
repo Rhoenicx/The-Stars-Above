@@ -59,9 +59,17 @@ namespace StarsAbove.Items.Weapons.Summon
         }
         public override bool CanUseItem(Player player)
         {
+            
             if (player.altFunctionUse == 2)
             {
 
+            }
+            else
+            {
+                if(player.maxMinions - player.slotsMinions < 2)//If player has less than 2 slots open do not let this be used on left click
+                {
+                    return false;
+                }
             }
 
             return base.CanUseItem(player);

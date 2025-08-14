@@ -23,7 +23,7 @@ namespace StarsAbove.Projectiles.StellarNovas
 			Projectile.hide = false;
 			Projectile.ownerHitCheck = true;
 			Projectile.tileCollide = false;
-			Projectile.friendly = true;
+            Projectile.friendly = true;
 			
 		}
 		int timer;
