@@ -2525,7 +2525,11 @@ namespace StarsAbove
                         {
                             if (target.lifeMax <= 5 && target.damage <= 1)
                             {
-                                starfarerPromptActive("onKillCritter");
+                                if (Main.rand.Next(0, 10) == 0)//1/10 chance to play the dialogue
+                                {
+                                    starfarerPromptActive("onKillCritter");
+                                }
+                                
                             }
                             else
                             {
@@ -10908,7 +10912,11 @@ namespace StarsAbove
             {
                 if (inCombat <= 0)
                 {
-                    starfarerPromptActive("onAmbush");
+                    if (Main.rand.Next(0, 10) == 0)//1/10 chance to play the dialogue
+                    {
+                        starfarerPromptActive("onAmbush");
+
+                    }
 
                 }
                 inCombat = 1200;
@@ -11458,7 +11466,9 @@ namespace StarsAbove
                 //During combat..
                 if (eventPrompt == "onKillCritter")
                 {
-                    if(chosenStarfarer == 1)
+                    
+
+                    if (chosenStarfarer == 1)
                     {
                         if (!voicesDisabled){SoundEngine.PlaySound(StarsAboveAudio.AsphodeneAccident0);}
 

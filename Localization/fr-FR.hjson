@@ -3206,7 +3206,7 @@ Mods: {
 							// E: Smug
 						}
 
-						// 4: Was that rude? Sorry. Just wondering what kind of parents names their children THAT. You get me, right?
+						// 4: Was that rude? Sorry. Just wondering what kind of parents names their children THAT. You have to understand me.
 					}
 
 					Eridani: {
@@ -3215,7 +3215,7 @@ Mods: {
 						// 1: That was a tough battle- the Abominationn was no joke.
 						// 2: Is he out of earshot? Right. Am I the only one who's a bit confused on how... busy... his wardrobe is?
 						// 3: I can excuse his sister for her cool hat. The Mutant is probably wearing armor, or something... Should I just tell him my thoughts?
-						// 4: Never mind. You're probably looking for some post-battle pep talk yet all I can proffer is- if this is his power, how strong is his brother?!
+						// 4: Never mind. You're probably looking for some post-battle pep talk, yet all I can proffer is- if this is his power, how strong is his brother?!
 					}
 				}
 
@@ -3224,9 +3224,9 @@ Mods: {
 						// Name: Mutant Dialogue
 						// Description: ""
 						// 1: You defeated the Mutant. That guy was nothing but crazy!
-						// 2: I was going to make a comment on how brutal the method of challenging this guy is, but the Abominationn just comes back... so no harm, no foul?
+						// 2: I was planning to comment on how brutal the method of challenging this guy is, but the Abominationn just comes back... so no harm, no foul?
 						// 3: Kind of fought like you, actually. Do you guys get dizzy floating up and down with wings? I doubt it, right?
-						// 4: You'd be a natural in a real vaccum. Don't tell Eri this, but she was basically a brainless avian the first time. And the second.
+						// 4: You'd be a natural in a real vaccum. Don't tell Eri this, but she was basically a brainless avian the first time. And the second, 'cause I sent her up again as a suprise.
 					}
 
 					Eridani: {
@@ -17791,9 +17791,21 @@ Mods: {
 
 			StellarNovaCutscene: {
 				// Tooltip: ""
-				// Never.Label: Never
-				// Session.Label: Per session
-				// Always.Label: Always
+
+				Never: {
+					// Label: Never
+					// Tooltip: ""
+				}
+
+				Session: {
+					// Label: Per session
+					// Tooltip: ""
+				}
+
+				Always: {
+					// Label: Always
+					// Tooltip: ""
+				}
 			}
 		}
 

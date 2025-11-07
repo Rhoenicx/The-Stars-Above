@@ -10,6 +10,7 @@ using StarsAbove.Items.Materials;
 using StarsAbove.Items.Weapons.Celestial;
 using StarsAbove.Items.Weapons.Summon;
 using SubworldLibrary;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Terraria;
@@ -66,16 +67,19 @@ namespace StarsAbove.Systems.WorldGeneration
 
             //The underworld bg is about 159 blocks from the top.
 
-            
-            
+
+
             var offsetDims = Point16.Zero;
             int neonVeilSize = 0;
             int offsetX = 0;
+            
 
             if (Main.specialSeedWorld)
             {
                 offsetX = (Main.maxTilesX / 10);
             }
+            
+
             //Create a list of all the structures that can be added. This doesn't include the entrance and exits. This list does not change at any time.
             List<string> neonVeilStructures = new List<string>() {
                 "NeonVeilBuilding1",
@@ -92,11 +96,10 @@ namespace StarsAbove.Systems.WorldGeneration
             //When a structure is generated, it'll be removed from this list (neonVeilBlueprint). If the list is empty and more things need to be generated, the list will be refilled from "UsedStructures"
             List<string> neonVeilBlueprint = new List<string>();
 
-            //TODO: Some buildings shouldn't repeat (I.E. Lightshow Tower or Garridine's outpost)
             if (Main.maxTilesX >= 8400)
             {
                 //Large (or bigger) world generation
-                neonVeilSize = 45;
+                neonVeilSize = 38;
             }
             else if (Main.maxTilesX >= 6400)
             {
@@ -105,9 +108,31 @@ namespace StarsAbove.Systems.WorldGeneration
             }
             else
             {
-                //Small world generation (same as medium)
+                //Small world generation
                 neonVeilSize = 20;
             }
+
+            if (ModLoader.TryGetMod("Remnants", out Mod remnantsMod))
+            {
+                if (remnantsMod != null)
+                {
+                    offsetX += (int)(Main.maxTilesX * 0.25);
+                    neonVeilSize -= 8;
+                }
+
+            }
+            if (ModLoader.TryGetMod("CalamityMod", out Mod calamityMod))
+            {
+                if(calamityMod != null && remnantsMod != null)
+                {
+                    if (Main.dungeonX > Main.maxTilesX / 2)
+                    {
+                        offsetX = (int)(-Main.maxTilesX / 2) + (int)(Main.maxTilesX * 0.05);
+                    }
+                }
+                
+            }
+
             for (int i = 0; i <= neonVeilSize; i++)
             {
                 progress.Set(i / neonVeilSize);
@@ -122,52 +147,52 @@ namespace StarsAbove.Systems.WorldGeneration
                     return;
                 }
 
-                if(neonVeilSize >= 45)//Large world
+                if (neonVeilSize >= 38) // Large world
                 {
-                    //Important Structures
-                    if (i == 23)//
-                    {
-                        CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "NeonVeilLighthouse");
-                    }
-                    else if (i == 12)//
+                    // Important Structures
+                    if (i == 10) // was 12
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "NeonVeilGarden");
                     }
-                    else if (i == 37)//
+                    else if (i == 19) // was 23
+                    {
+                        CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "NeonVeilLighthouse");
+                    }
+                    else if (i == 31) // was 37
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "NeonVeilBar");
                     }
 
-                    //Confluxes
-                    else if (i == 5)//
+                    // Confluxes
+                    else if (i == 4)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxAuricExalt");
                     }
-                    else if (i == 10)//
+                    else if (i == 8)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxBloodyBanquet");
                     }
-                    else if (i == 15)//
+                    else if (i == 13)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxCrescentMeteor");
                     }
-                    else if (i == 20)//
+                    else if (i == 17)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxDeadbloom");
                     }
-                    else if (i == 25)//
+                    else if (i == 21)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxDreadMechanical");
                     }
-                    else if (i == 30)//
+                    else if (i == 25)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxLucidDreamer");
                     }
-                    else if (i == 35)//
+                    else if (i == 30)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxLuminousHallow");
                     }
-                    else if (i == 40)//
+                    else if (i == 34)
                     {
                         CreateNeonVeilStructure(ref offsetDims, ref offsetX, neonVeilBlueprint, "ConfluxRoyalSunrise");
                     }
